@@ -1,0 +1,90 @@
+﻿@model WebSitem.Models.kullanici
+
+@{
+    ViewBag.Title = "Giris";
+    //Layout = "~/Areas/admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.title</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Content/admin/plugins/fontawesome-free/css/all.min.css">
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="~/Content/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/Content/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/Content/admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/admin/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="../../index2.html"><b>Giriş</b>Paneli</a>
+        </div>
+       
+        
+        
+
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Giriş Bilgilerinizi Giriniz.</p>
+
+                @using (Html.BeginForm("Kontrol", "Giris", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                {
+
+                    <div class="input-group mb-3">
+                        @Html.EditorFor(m => m.kAd, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.kAd)
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        @Html.EditorFor(m => m.Sifre, new { @class = "form-control", @placeholder = "Şifre" })
+                        @Html.ValidationMessageFor(m => m.Sifre)
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="icheck-primary">
+
+                                <label for="remember">
+                                    Beni Hatırla
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block">Giriş</button>
+                        </div>
+
+                    </div>
+                }
+                
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="~/Content/admin/plugins/jquery/jquery.min.js"></script>
+
+    <script src="~/Content/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/Content/admin/dist/js/adminlte.min.js"></script>
+</body>
+</html>

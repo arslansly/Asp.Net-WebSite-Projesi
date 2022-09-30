@@ -1,0 +1,91 @@
+﻿@model WebSitem.Models.anasayfa
+@{
+    ViewBag.Title = "Anasayfa";
+    Layout = "~/Areas/admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="container">
+        <h2>Anasayfa Güncelle Sayfası</h2>
+        @using (Html.BeginForm("Kaydet", "Anasayfa", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {
+            <table class="table table-bordered">
+                <tr>
+                    <td>Foto</td>
+                    <td>
+                        <img src="~/Content/images/@Model.Foto" width="250" />
+                        @Html.TextBoxFor(m => m.fotoFile, new { type = "file" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>Üst Başlık</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.UstBaslik, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.UstBaslik)
+                    </td>
+                <tr>
+                    <td>Başlık</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Baslik, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Baslik)
+                    </td>
+                </tr>
+                <tr>
+                    <td>İçerik</td>
+                    <td>
+                        @Html.TextAreaFor(m => m.Icerik, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Icerik)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Üst Başlık</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.AUstBaslik, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.AUstBaslik)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Başlık</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.ABaslik, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ABaslik)
+                    </td>
+                </tr>
+                <tr>
+                    <td>İçerik</td>
+                    <td>
+                        @Html.TextAreaFor(m => m.AIcerik, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.AIcerik)
+                    </td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        @Html.HiddenFor(m => m.Foto)
+                        @Html.HiddenFor(m => m.ID)
+                        <input type="submit" value="Güncelle" class="btn btn-success" />
+                    </td>
+                </tr>
+
+            </table>
+        }
+    </div>
+</div>
+
+
+@section altTaraf
+{
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/Content/admin/plugins/summernote/summernote-bs4.css">
+    <!-- Summernote -->
+    <script src="~/Content/admin/plugins/summernote/summernote-bs4.min.js"></script>
+    <script>
+            $(function () {
+                // Summernote
+                $('#Icerik').summernote()
+                $('#AIcerik').summernote()
+            });
+        </script>
+}
+

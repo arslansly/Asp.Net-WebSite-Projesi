@@ -1,0 +1,163 @@
+﻿@model List<WebSitem.Models.magaza>
+@{
+    ViewBag.Title = "Store";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach (var magaza in Model)
+{
+
+    <section class="container overflow-hidden py-5">
+        <div class="container">
+            <div class="intro">
+
+                <div class="row gx-5 gx-sm-3 gx-lg-5 gy-lg-5 gy-3 pb-3 projects">
+                    
+                    <!-- Start Recent Work -->
+                    <div class="col-xl-12 col-md-4 col-sm-6 project ui graphic">
+                        <!--    <div class="service-work card border-bottom text-white shadow-sm overflow-hidden mx-5 m-sm-0"> -->
+
+
+                        <img class="card-img" src="~/Content/images/@magaza.Foto" height="500">
+
+                        <div class="service-work-content text-left text-light">
+                            @Html.Raw(magaza.Icerik)
+                        </div>
+                    </div>
+
+                    </div>
+
+                        <!-- End Recent Work -->
+                    </div>
+                </div>
+            
+        
+    </section>
+
+}
+
+<p>
+    <div class="col-xl-9 mx-auto">
+      
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.221130609011!2d28.68491051533675!3d41.02041782662663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa0bad47ed993%3A0xf893de82b52538eb!2s%C4%B0stanbul%20Esenyurt%20%C3%9Cniversitesi!5e0!3m2!1str!2str!4v1654512898585!5m2!1str!2str" width="1035" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+     </div>
+</p>
+
+
+
+<div class="col-xl-9 mx-auto">
+    <table class="table table-sm table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">HAFTA İÇİ</th>
+                <th scope="col">HAFTA SONU</th>
+                <th scope="col">PAZAR</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">PAZARTESİ</th>
+                <td>09:00-24:00</td>
+                <td></td>
+                <td>KAPALI</td>
+            </tr>
+            <tr>
+                <th scope="row">SALI</th>
+                <td>09:00-24:00</td>
+                <td></td>
+                <td>KAPALI</td>
+            </tr>
+            <tr>
+                <th scope="row">ÇARŞAMBA</th>
+                <td>09:00-24:00</td>
+                <td></td>
+                <td>KAPALI</td>
+            </tr>
+            <tr>
+                <th scope="row">PERŞEMBE</th>
+                <td>09:00-24:00</td>
+                <td></td>
+                <td>KAPALI</td>
+            </tr>
+            <tr>
+                <th scope="row">CUMA</th>
+                <td>09:00-24:00</td>
+                <td>10:00-24:00</td>
+                <td>KAPALI</td>
+            </tr>
+            <tr>
+                <th scope="row">CUMARTESİ</th>
+                <td>09:00-24:00</td>
+                <td>10:00-24:00</td>
+                <td>KAPALI</td>
+            </tr>
+            
+        </tbody>
+    </table>
+    </div>
+
+
+    <!--  <section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                   <div class="cta-inner text-center rounded">
+                <h2 class="section-heading mb-5">
+                    <span class="section-heading-upper">Sizleri Bekliyoruz</span>
+                    <span class="section-heading-lower">Açık Olduğumuz Günler</span>
+                </h2>
+                <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+                    <li class="list-unstyled-item list-hours-item d-flex today">
+                        Pazar
+                        <span class="ml-auto">Kapalı</span>
+                    </li>
+                    <li class="list-unstyled-item list-hours-item d-flex">
+                        Pazartesi
+                        <span class="ml-auto">7:00 - 16:00 </span>
+                    </li>
+                    <li class="list-unstyled-item list-hours-item d-flex">
+                        Salı
+                        <span class="ml-auto">7:00 - 16:00 </span>
+                    </li>
+                    <li class="list-unstyled-item list-hours-item d-flex">
+                        Çarşamba
+                        <span class="ml-auto">7:00 - 16:00 </span>
+                    </li>
+                    <li class="list-unstyled-item list-hours-item d-flex">
+                        Perşembe
+                        <span class="ml-auto">7:00 - 16:00 </span>
+                    </li>
+                    <li class="list-unstyled-item list-hours-item d-flex">
+                        Cuma
+                        <span class="ml-auto">7:00 - 16:00 </span>
+                    </li>
+                    <li class="list-unstyled-item list-hours-item d-flex">
+                        Cumartesi
+                        <span class="ml-auto">9:00 - 13:00 </span>
+                    </li>
+                </ul>
+                <p class="address mb-5">
+                    <em>
+                        <strong>İSTANBUL</strong>
+                        <br>
+                        ESENYURT ÜNİVERSİTESİ
+                    </em>
+                </p>
+                <p class="mb-0">
+                    <small>
+                        <em>Bizi Arayın</em>
+                    </small>
+                    <br>
+                    0 (212) 111-1111
+                </p>
+            </div>
+        </div>
+    </div>
+        </div>
+    </section> -->
+
+
+
+

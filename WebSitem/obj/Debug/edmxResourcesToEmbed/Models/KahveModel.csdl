@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbKahveModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="hakkimizda">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UstBaslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="kullanici">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="urunler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UstBaslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="DbKahveEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="hakkimizda" EntityType="Self.hakkimizda" />
+    <EntitySet Name="kullanici" EntityType="Self.kullanici" />
+    <EntitySet Name="urunler" EntityType="Self.urunler" />
+    <EntitySet Name="anasayfa" EntityType="DbKahveModel.anasayfa" />
+    <EntitySet Name="magaza" EntityType="DbKahveModel.magaza" />
+  </EntityContainer>
+  <EntityType Name="anasayfa">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UstBaslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AUstBaslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ABaslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AIcerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="magaza">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Foto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

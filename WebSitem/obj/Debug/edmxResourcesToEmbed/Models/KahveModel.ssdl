@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbKahveModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="anasayfa">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Foto" Type="nvarchar(max)" />
+    <Property Name="UstBaslik" Type="nvarchar" MaxLength="50" />
+    <Property Name="Baslik" Type="nvarchar" MaxLength="50" />
+    <Property Name="Icerik" Type="text" />
+    <Property Name="AUstBaslik" Type="nvarchar" MaxLength="50" />
+    <Property Name="ABaslik" Type="nvarchar" MaxLength="50" />
+    <Property Name="AIcerik" Type="text" />
+  </EntityType>
+  <EntityType Name="hakkimizda">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Foto" Type="nvarchar(max)" />
+    <Property Name="UstBaslik" Type="nvarchar" MaxLength="50" />
+    <Property Name="Baslik" Type="nvarchar" MaxLength="50" />
+    <Property Name="Icerik" Type="text" />
+  </EntityType>
+  <EntityType Name="kullanici">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role" Type="bit" />
+  </EntityType>
+  <EntityType Name="magaza">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Foto" Type="nvarchar" MaxLength="50" />
+    <Property Name="Icerik" Type="text" />
+  </EntityType>
+  <EntityType Name="urunler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Foto" Type="nvarchar(max)" />
+    <Property Name="Baslik" Type="nvarchar" MaxLength="50" />
+    <Property Name="UstBaslik" Type="nvarchar" MaxLength="50" />
+    <Property Name="Icerik" Type="text" />
+  </EntityType>
+  <EntityContainer Name="DbKahveModelStoreContainer">
+    <EntitySet Name="anasayfa" EntityType="Self.anasayfa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hakkimizda" EntityType="Self.hakkimizda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kullanici" EntityType="Self.kullanici" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="magaza" EntityType="Self.magaza" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="urunler" EntityType="Self.urunler" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

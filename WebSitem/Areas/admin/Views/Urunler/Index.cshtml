@@ -1,0 +1,147 @@
+﻿@model List<WebSitem.Models.urunler>
+@{
+    ViewBag.Title = "Ürünler";
+    Layout = "~/Areas/admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@if (TempData["urun"] != null)
+{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+    swal("Başarılı","@Html.Raw(TempData["urun"])","success");
+    </script>
+}
+
+   <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Ürünler Sayfası</h1>
+                   
+                </div>
+                @*<div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">DataTables</li>
+                    </ol>
+                </div>*@
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- /.card -->
+                    <div class="card">
+                        <div class="card-header">
+                            @Html.ActionLink("Yeni Ürün Ekle", "Yeni", null, new { @class = "btn btn-primary mx-4" })
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Foto</th>
+                                        <th>Üst Başlık</th>
+                                        <th>Başlık</th>
+                                        <th>İçerik</th>
+                                        <th>Güncelle</th>
+                                        <th>Sil</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var urun in Model)
+                                    {
+                                    <tr>
+                                        <td><img src="~/Content/images/@urun.Foto" width="150" /></td>
+                                        <td>@urun.UstBaslik</td>
+                                        <td>@urun.Baslik</td>
+                                        <td>
+                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal_@urun.ID">
+                                                İçerik
+                                            </button>
+                                            <div class="modal fade" id="modal_@urun.ID">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">İçerik</h4>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            @Html.Raw(urun.Icerik)
+                                                        </div>
+                                                        <div class="modal-footer justify-content-between">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.modal-content -->
+                                                </div>
+                                                <!-- /.modal-dialog -->
+                                            </div>
+                                            <!-- /.modal -->
+                                        </td>
+                                        <td>@Html.ActionLink("Güncelle","Guncelle",new { urun.ID },new {@class="btn btn-info mx-4"})</td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#sil_@urun.ID">
+                                                Sil
+                                            </button>
+                                            <div class="modal fade" id="sil_@urun.ID">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Sil</h4>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <h4>Ürünü silmek istiyormusunuz</h4>
+                                                        </div>
+                                                        <div class="modal-footer justify-content-between">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Vazgeç</button>
+                                                            @Html.ActionLink("Sil", "Sil", new { urun.ID},new { @class = "btn btn-danger" })
+                                                        </div>
+                                                    </div>
+                                                    <!-- /.modal-content -->
+                                                </div>
+                                                <!-- /.modal-dialog -->
+                                            </div>
+                                            <!-- /.modal -->
+                                        </td>
+                                   </tr>
+                                    }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Foto</th>
+                                        <th>Üst Başlık</th>
+                                        <th>Başlık</th>
+                                        <th>İçerik</th>
+                                        <th>Güncelle</th>
+                                        <th>Sil</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+

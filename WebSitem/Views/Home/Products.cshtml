@@ -1,0 +1,33 @@
+﻿@model List<WebSitem.Models.urunler>
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="page-section">
+    <div class="container-fluid">
+        <div class="product-item">
+
+            <div class="row mx-auto">
+
+
+                @foreach (var urun in Model)
+                {
+                   
+                        
+                        <div class="card mx-auto" style="width: 18rem;">
+                            <img class="card-img-top" src="~/Content/images/@urun.Foto" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="card-title">@urun.Baslik</span>
+                                <p class="card-text">@Html.Raw(urun.Icerik)</p>
+                            </div>
+
+                        </div>
+               
+                 }
+                    </div>
+                </div>
+                
+        </div>
+    
+</section>
+}

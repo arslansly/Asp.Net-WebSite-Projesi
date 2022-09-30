@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{7D4C7918-5E80-426E-ADD1-0EDD701E8B09}|">
+  <MonoDevelop.Ide.ItemProperties.WebSitem PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebSitem/Models/Ogrenci.cs">
+    <Files>
+      <File FileName="WebSitem/Dockerfile" Line="1" Column="1" />
+      <File FileName="WebSitem/WebSitem.csproj" Line="2" Column="26" />
+      <File FileName="WebSitem/Controllers/HomeController.cs" Line="13" Column="9" />
+      <File FileName="WebSitem/Models/KahveModel.edmx" Line="1" Column="1" />
+      <File FileName="WebSitem/Models/Ogrenci.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WebSitem" expanded="True">
+            <Node name="WebSitem" expanded="True">
+              <Node name="Models" expanded="True">
+                <Node name="Ogrenci.cs" selected="True" />
+              </Node>
+              <Node name="Web.config" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

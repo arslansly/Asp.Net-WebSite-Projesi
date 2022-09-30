@@ -1,0 +1,67 @@
+﻿@model WebSitem.Models.magaza
+@{
+    ViewBag.Title = "Magaza";
+    Layout = "~/Areas/admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .field-validation-error {
+        color: red;
+    }
+</style>
+
+<div class="content-wrapper">
+    <div class="container">
+        <h2>Magaza Form Sayfası</h2>
+        @using (Html.BeginForm("Kaydet", "Magaza", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {
+            <table class="table table-hover bg-white">
+                <tr>
+                    <td>Foto</td>
+                    <td>
+                        @if (Model.Foto != null)
+                        {
+                            <img src="~/Content/images/@Model.Foto" width="250" />
+                        }
+                        @Html.TextBoxFor(m => m.fotoFile, new { type = "file" })
+                        @if (ViewBag.HataFoto != null)
+                        {
+                            <span class="field-validation-error" data-valmsg-for="fotoFile" data-valmsg-replace="true">@ViewBag.HataFoto</span>
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>İçerik</td>
+                    <td>
+                        @Html.TextAreaFor(m => m.Icerik, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Icerik)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        @Html.HiddenFor(m => m.Foto)
+                        @Html.HiddenFor(m => m.ID)
+                        <input type="submit" value="Kaydet" class="btn btn-primary" />
+                    </td>
+                </tr>
+
+            </table>
+        }
+
+    </div>
+
+</div>
+@section altTaraf
+{
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/Content/admin/plugins/summernote/summernote-bs4.css">
+    <!-- Summernote -->
+    <script src="~/Content/admin/plugins/summernote/summernote-bs4.min.js"></script>
+    <script>
+     $(function () {
+          // Summernote
+         $('#Icerik').summernote()
+     });
+    </script>
+}

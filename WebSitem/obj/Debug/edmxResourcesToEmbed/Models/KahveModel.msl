@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbKahveModelStoreContainer" CdmEntityContainer="DbKahveEntities">
+    <EntitySetMapping Name="hakkimizda">
+      <EntityTypeMapping TypeName="DbKahveModel.hakkimizda">
+        <MappingFragment StoreEntitySet="hakkimizda">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="UstBaslik" ColumnName="UstBaslik" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kullanici">
+      <EntityTypeMapping TypeName="DbKahveModel.kullanici">
+        <MappingFragment StoreEntitySet="kullanici">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="kAd" ColumnName="kAd" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="urunler">
+      <EntityTypeMapping TypeName="DbKahveModel.urunler">
+        <MappingFragment StoreEntitySet="urunler">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="UstBaslik" ColumnName="UstBaslik" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="anasayfa">
+      <EntityTypeMapping TypeName="DbKahveModel.anasayfa">
+        <MappingFragment StoreEntitySet="anasayfa">
+          <ScalarProperty Name="AIcerik" ColumnName="AIcerik" />
+          <ScalarProperty Name="ABaslik" ColumnName="ABaslik" />
+          <ScalarProperty Name="AUstBaslik" ColumnName="AUstBaslik" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="UstBaslik" ColumnName="UstBaslik" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="magaza">
+      <EntityTypeMapping TypeName="DbKahveModel.magaza">
+        <MappingFragment StoreEntitySet="magaza">
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
